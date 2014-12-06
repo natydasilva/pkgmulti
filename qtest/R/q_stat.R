@@ -4,10 +4,6 @@
 #' @param x multivariate sample
 #' @param y multivariate sample
 #' @export
-#' @example
-#' x <- rmvnorm(50,mean=c(1,2,3),3*diag(3))
-#' y <- rmvnorm(40,mean=c(1,2,3)+5,diag(3))
-#' q_stat(x,y)
 q_stat<-function(x,y){
 
   nx <- nrow(x)
@@ -28,7 +24,9 @@ q_stat<-function(x,y){
 
   Q <- tu.x/(nx*(nx-1))+tu.y/(ny*(ny-1))-2*tu.xy/(nx*ny)
 
-  return(Q)
+  Q.var <- (2*tr2_sigma(x))/(nx*(nx-1)) + (2*tr2_sigma(y))/(ny*(ny-1))+(4/nx*ny)*tr_sgxsgy(x,y)
+
+  return(c(Q.test=Q,Q.var=Q.var))
 
 }
 
