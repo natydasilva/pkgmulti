@@ -7,6 +7,6 @@
 CQ_test <- function(x,y){
  aux <- q_stat(x,y)
 test<-  aux[1]/sqrt(aux[2])
-p.val <- 1-pnorm(abs(test))
-return(list(test,p.val))
+p.val <- 2*pnorm(abs(test),lower.tail = FALSE)
+return(data.frame(CQ.stat=test, Q.var=aux[2] ,p.val=p.val))
 }

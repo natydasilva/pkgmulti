@@ -10,9 +10,12 @@ tr_sgxsgy <- function(x,y){
 
   # compute trace for A_jk
   tr_jk <- function(j,k) {
-    mx <- (nx/(nx-1)) * (apply(x,2,mean) - x[j,]  )
-    my <- (ny/(ny-1)) * (apply(y,2,mean) - y[k,]  )
-    sum(t(tcrossprod( t(x[-j,])-mx, t(x[-j,]))) * tcrossprod( t(y[-k,])-my, t(y[-k,])))
+    mx <- (1/(nx-1)) * (apply(x,2,sum) - x[j,]  )
+    my <- (1/(ny-1)) * (apply(y,2,sum) - y[k,]  )
+
+    A <- outer(x[j,]-m, x[j,])
+    B <- outer(y[k,]-m,y[k,])
+    sum(A*B)
   }
 
   # get index for j and k and add up all tr(A_jk)
