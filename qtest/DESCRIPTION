@@ -12,7 +12,6 @@ Description: Compute the CQ test, (multivariate mean difference)
 License: LGPL-2.1
 LazyData: true
 NeedsCompilation: yes
-VignetteBuilder: knitr
 Suggests:
     knitr,
     roxygen2 (>= 3.0.0)
