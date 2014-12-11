@@ -4,10 +4,6 @@
 #' @param x multivariate sample
 #' @param y multivariate sample
 #' @export
-#' @example
-#' x <- rmvnorm(50,mean=c(1,2,3),3*diag(3))
-#' y <- rmvnorm(40,mean=c(1,2,3)+5,diag(3))
-#' q_stat(x,y)
 q_stat<-function(x,y){
 
   nx <- nrow(x)

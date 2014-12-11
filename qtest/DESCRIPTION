@@ -1,12 +1,19 @@
 Package: qtest
 Title: What the package does (one line)
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
+Author: Ignacio Alvarez, Natalia da Silva
+Maintainer: Natalia da Silva <ndasilva@iastate.edu>
 Depends:
-    R (>= 3.0.2),
+    R (>= 3.0.1),
 Imports:
     mvtnorm,
     plyr
-License: What license is it under?
+Description: Compute the CQ test, (multivariate mean difference)
+License: LGPL-2.1
 LazyData: true
+NeedsCompilation: yes
+VignetteBuilder: knitr
+Suggests:
+    knitr,
+    roxygen2 (>= 3.0.0)
+Roxygen: list(wrap = TRUE)
