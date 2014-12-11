@@ -13,8 +13,8 @@ tr_sgxsgy <- function(x,y){
     mx <- (1/(nx-1)) * (apply(x,2,sum) - x[j,]  )
     my <- (1/(ny-1)) * (apply(y,2,sum) - y[k,]  )
 
-    A <- outer(x[j,]-m, x[j,])
-    B <- outer(y[k,]-m,y[k,])
+    A <- outer(x[j,]-mx, x[j,])
+    B <- outer(y[k,]-my,y[k,])
     sum(A*B)
   }
 
